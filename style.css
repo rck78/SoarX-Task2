@@ -1,0 +1,137 @@
+:root {
+  --background-color: #121212;
+  --colortx: aliceblue;
+  --collection-color: purple;
+  --collection-color2: teal;
+  --bord: white;
+}
+
+[data-theme="light"] {
+  --background-color: #f5f5dc; /* Notebook-style yellow */
+  --colortx: black;
+  --collection-color: wheat;
+  --collection-color2: linen;
+  --bord: black;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--colortx);
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hero-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.hero-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-title {
+  color: var(--colortx);
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: var(--collection-color);
+  border-radius: 0.1em;
+  border: 1px solid var(--colortx)
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+}
+
+.dark-light-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  background-color: var(--collection-color);
+  color: var(--collection-color);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+#theme-toggle {
+  background-color: var(--collection-color);
+}
+
+.collection {
+  border: 1px solid var(--bord)
+}
+
+.collection-item {
+  background-color: var(--collection-color2);
+  color: var(--colortx);
+}
+
+#colHeader {
+  background-color: var(--collection-color);
+  color: var(--colortx);
+  font-weight: bold;
+}
+
+.collection .collection-item {
+  background-color: var(--collection-color2);
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important; /* Override autofill background */
+}
+
+.input-field input:focus {
+  background-color: #f0f0f0; /* Background color when focused (light color) */
+  color: #000; /* Ensure the text remains visible */
+}
+
+.input-field input:not(:placeholder-shown) {
+  background-color: var(--collection-color2); /* Darker background for filled input*/
+  color: var(--bord); /* Ensure text is visible in dark mode */
+}
+
+.input-field input:valid + label {
+  color: #fff; /* Change label color for dark mode */
+}
+
+#submit-button {
+  background-color: var(--collection-color);
+  color: var(--colortx);
+  border: 1px solid var(--collection-color2);
+}
+
+footer {
+  background-color: var(--collection-color);
+  color: var(--bord);
+  text-align: center;
+  padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    flex-wrap: nowrap;
+  }
+
+  .hero-section img {
+    max-width: 300px;
+    margin-right: 20px;
+  }
+}

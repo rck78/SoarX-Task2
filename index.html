@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Landing Page - Dark & Light Modes</title>
+  <!-- Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+  <!-- Dark/Light Toggle Button -->
+  <button class="dark-light-toggle" id="theme-toggle">☀️</button>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <img src="flyer.jpg" alt="Event Flyer">
+    <div class="hero-text">
+      <h1 class="hero-title">Microsoft SDE Secrets & Tips</h1>
+      <p class="hero-subtitle">Learn directly from experts to land top placements!</p>
+    </div>
+  </div>
+
+  <!-- About Event Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="center">About the Event</h2>
+      <p class="flow-text">
+        🚀 Insider tips and strategies from <strong>Anshima Choudhary</strong> to excel in Software Development roles at Microsoft and other top companies.
+        Actionable advice on tackling interviews, excelling in coding challenges, and securing your dream job.
+      </p>
+      <ul class="collection">
+        <li class="collection-item" id="colHeader">Event Details</li>
+        <li class="collection-item"><strong>Date:</strong> December 25, 2024</li>
+        <li class="collection-item"><strong>Time:</strong> 3:00 PM - 4:00 PM</li>
+        <li class="collection-item"><strong>Location:</strong> Online (Link shared upon registration)</li>
+      </ul>
+    </div>
+  </section>
+
+    <!-- Registration Section -->
+    <section class="section" id="register">
+        <div class="container">
+          <h3 class="highlight">Register for the Event</h3>
+          <form id="registration-form" class="row">
+            <div class="input-field col s12 m6">
+              <input id="name" type="text" name="Name" required>
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="email" type="email" name="Email" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="contact" type="tel" name="Contact" required>
+              <label for="contact">Contact</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="college" type="text" name="College" required>
+              <label for="college">College</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="branch" type="text" name="Branch" required>
+              <label for="branch">Branch</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="year" type="number" name="Year" required>
+              <label for="year">Year</label>
+            </div>
+            <div class="col s12 center">
+              <button class="btn waves-effect waves-light" type="submit" id="submit-button">Register</button>
+            </div>
+            <div id="message" class="center"></div>
+          </form>
+        </div>
+      </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Event Registration. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Dark/Light Theme Toggle
+    const themeToggle = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = body.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      body.setAttribute("data-theme", newTheme);
+      themeToggle.textContent = newTheme === "dark" ? "☀️" : "🌙";
+    });
+  </script>
+  <script src="scripts.js"></script>
+  <script src="script.js"></script>
+  <!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
